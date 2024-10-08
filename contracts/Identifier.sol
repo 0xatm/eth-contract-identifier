@@ -10,17 +10,8 @@ interface IdentifiableContract {
 contract ContractIdentifier {
     uint256 private constant GAS_LIMIT = 100000;
     uint256 private constant MAX_BATCH_SIZE = 100;
-
-    error PaymentNotAccepted();
+    
     error BatchSizeTooLarge(uint256 size);
-
-    receive() external payable {
-        revert PaymentNotAccepted();
-    }
-
-    fallback() external {
-        revert("Function does not exist");
-    }
 
     function callName(address contractAddress) public view returns (string memory result) {
         return _callContractFunction(contractAddress, abi.encodeWithSignature("name()"));

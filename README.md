@@ -2,7 +2,7 @@
 
 A smart contract that allows you to retrieve name and/or description information from multiple contracts (tokens, price feeds, etc.) in a single RPC call.
 
-## `ContractIdentifier.sol`
+## `Identifier.sol`
 
 Enables querying multiple contracts for their name and description in a single call.
 
